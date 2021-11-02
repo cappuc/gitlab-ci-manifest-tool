@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -38,8 +39,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           cache-from: |
             type=local,src=/tmp/.buildx-cache
-            cappuc/gitlab-ci-manifest-tool:${{ matrix.tag }}
+            cappuc/gitlab-ci-manifest-tool:latest
+            cappuc/gitlab-ci-manifest-tool:v1
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=all
           push: true
           tags: |
-            cappuc/gitlab-ci-manifest-tool:${{ matrix.tag }}
+            cappuc/gitlab-ci-manifest-tool:latest
+            cappuc/gitlab-ci-manifest-tool:v1
