@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-ARG MANIFEST_TOOL_VERSION=2.0.0-rc.1
+ARG MANIFEST_TOOL_VERSION=2.0.3
 ARG TARGETARCH
 RUN apt-get update && \
     apt-get install -y curl && \
